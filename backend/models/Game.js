@@ -1,0 +1,1 @@
+const mongoose = require('mongoose'); const gameSchema = new mongoose.Schema({ board: { type: [[String]], default: [['','',''],['','',''],['','','']] }, currentPlayer: { type: String, enum: ['X', 'O'], default: 'X' }, winner: { type: String, enum: ['X', 'O', 'Draw', null], default: null } }, { timestamps: true }); module.exports = mongoose.model('Game', gameSchema);
